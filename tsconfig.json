@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"module": "system",
+		"target": "ES5",
+		"removeComments": true,
+		"sourceMap": true
+	},
+	"exclude": [
+		"node_modules",
+		".idea",
+		"target"
+	]
+}
