@@ -35,7 +35,8 @@ module.exports = function (grunt) {
 					files: [
 						'src/scripts/angular/angular.js',
 						'node_modules/angular-mocks/angular-mocks.js',
-						'target/app/**/*.js'
+						'target/app/**/*.js',
+						'src/test/*tests.js'
 					]
 				}
 			}
