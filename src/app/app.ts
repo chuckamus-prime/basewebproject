@@ -1,3 +1,10 @@
-/**
- * Created by csailors on 7/19/2016.
- */
+"use strict";
+
+import 'scripts/angular/angular';
+
+angular.module("ExampleApp", []);
+
+export var getModule:() => ng.IModule = () => {
+	return angular.module("ExampleApp");
+}; 
+ 

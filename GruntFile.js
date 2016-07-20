@@ -33,15 +33,16 @@ module.exports = function (grunt) {
 				browsers: ['PhantomJS'],
 				options: {
 					files: [
+						'src/scripts/requirejs/require.js',
+						'node_modules/systemjs/dist/system-polyfills.src.js',
+						'node_modules/systemjs/dist/system.src.js',
 						'src/scripts/angular/angular.js',
 						'node_modules/angular-mocks/angular-mocks.js',
-						'target/app/**/*.js',
+						'target/app/bootstrap.js',
 						'src/test/*tests.js'
 					]
 				}
 			}
-
-
 		}
 	});
 	grunt.loadNpmTasks ('grunt-ts');
