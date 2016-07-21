@@ -3,8 +3,8 @@
  */
 export class QuoteService {
 	public quote: string = "The Real Deal";
-​​
-  getQuote() {
-	  return this.quote;
-  }
+
+	getQuote() {
+		return this.quote;
+	}
 }

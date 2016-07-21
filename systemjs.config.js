@@ -5,6 +5,7 @@
  */
 (function(global) {
 
+	var baseUrl = "";
 	// map tells the System loader where to look for things
 	var map = {
 		'app':                        'src/app', // 'dist',
@@ -16,7 +17,7 @@
 	var packages = {
 		'app':                        { main: 'main.js',  defaultExtension: 'js' },
 		'rxjs':                       { defaultExtension: 'js' },
-		'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
+		'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' }
 	};
 	var ngPackageNames = [
 		'common',
@@ -43,6 +44,7 @@
 	// Add package entries for angular packages
 	ngPackageNames.forEach(setPackageConfig);
 	var config = {
+		baseURL: baseUrl,
 		map: map,
 		packages: packages
 	};

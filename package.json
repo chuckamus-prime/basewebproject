@@ -31,6 +31,7 @@
 		"karma-jasmine":"",
 		"karma-phantomjs-launcher":"",
 		"typescript": "^1.8.10",
+
 		"typings":"^1.0.4"
 	}
 }

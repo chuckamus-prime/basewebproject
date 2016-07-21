@@ -14,10 +14,10 @@ import {Component} from '@angular/core';
 
 export class QuoteComponent {
 	quote: string;
-​
-  constructor (private quoteService: QuoteService){}
-​
-  getQuote() {
-	  this.quote = this.quoteService.getQuote();
-  }
+
+	constructor (private quoteService: QuoteService){}
+
+	getQuote() {
+		this.quote = this.quoteService.getQuote();
+	}
 }

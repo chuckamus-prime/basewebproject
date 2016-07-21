@@ -11,9 +11,11 @@ module.exports = function (grunt) {
 				"options": {
 					"module": "system",
 					"target": "ES5",
+					"moduleResolution": "node",
+					"emitDecoratorMetadata": true,
+					"noImplicitAny": false,
 					"removeComments": true,
 					"sourceMap": true
-
 				}
 			}
 		},
