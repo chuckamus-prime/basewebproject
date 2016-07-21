@@ -121,13 +121,6 @@
 							<directory>${project.build.directory}/</directory>
 						</fileset>
 						<fileset>
-							<directory>${basedir}/src/app</directory>
-							<includes>
-								<include>**/*.js</include>
-								<include>**/*.js.map</include>
-							</includes>
-						</fileset>
-						<fileset>
 							<directory>${basedir}/src/content</directory>
 							<includes>
 								<include>Site.css</include>

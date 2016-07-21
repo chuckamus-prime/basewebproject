@@ -1,10 +1,8 @@
+///<reference path="../app.js"/>
 /**
  * Created by ghart on 7/19/2016.
  */
-angular.module('ExampleApp', [])
-
-	.service('FibonacciService', [function() {
-
+exampleApp.service('FibonacciService', [function() {
 		// iterative approach
 		this.fibonacci = function(length) {
 			var prev1 = 1,
@@ -17,5 +15,4 @@ angular.module('ExampleApp', [])
 			}
 			return current;
 		};
-
 	}]);
