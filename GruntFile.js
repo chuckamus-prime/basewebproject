@@ -1,6 +1,22 @@
 module.exports = function (grunt) {
 	"use strict";
 	grunt.initConfig ({
+		ts : {
+			options: {
+				compiler: './node_modules/typescript/bin/tsc'
+				//note, this relies on the package.json file to specify the typescript version the project is using.
+			},
+			default : {
+				src: ['src/**/*.ts'],
+				"options": {
+					"module": "system",
+					"target": "ES5",
+					"removeComments": true,
+					"sourceMap": true
+
+				}
+			}
+		},
 		less: {
 			default: {
 				options: {
@@ -11,17 +27,42 @@ module.exports = function (grunt) {
 		},
 		karma: {
 			unit: {
+//				basePath: '.',
 				logLevel:"debug",
 				frameworks: ['jasmine'],
 				singleRun: true,
 				browsers: ['PhantomJS'],
+				plugins: ['karma-jasmine','karma-phantomjs-launcher'],
 				options: {
 					files: [
-						'src/scripts/angular/angular.js',
-						'node_modules/angular-mocks/angular-mocks.js',
-						'target/app/**/*.js',
-						'src/test/*tests.js'
+						// paths loaded by Karma
+						{pattern: 'node_modules/es6-shim/es6-shim.min.js', included: true, watched: true},
+						{pattern: 'node_modules/reflect-metadata/Reflect.js', included: true, watched: true},
+						{pattern: 'node_modules/zone.js/dist/zone.js', included: true, watched: true},
+						{pattern: 'node_modules/zone.js/dist/async-test.js', included: true, watched: true},
+						{pattern: 'node_modules/systemjs/dist/system-polyfills.js', included: true, watched: true},
+						{pattern: 'node_modules/systemjs/dist/system.src.js', included: true, watched: true},
+						{pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false},
+						{pattern: 'node_modules/@angular/**/*.js', included: false, watched: false},
+						{pattern: 'karma-test-shim.js', included: true, watched: true},
+
+						// Paths loaded via module imports
+						{pattern: 'src/app/Components/*Spec.js', included: true, watched: true},
+
+						// Paths to support debugging with source maps in dev tools
+						{pattern: 'src/app/Components/*.ts', included: false, watched: true},
+						{pattern: 'src/app/Components/*.js.map', included: false, watched: false}
 					]
+// 					proxies: {
+// 						// required for component assests fetched by Angular's compiler
+// 						'/src/app': '/base/src/app'
+// 					}
+// 					files: [
+// 						'src/scripts/angular/angular.js',
+// 						'node_modules/angular-mocks/angular-mocks.js',
+// 						'target/app/**/*.js',
+// 						'src/test/*tests.js'
+// 					]
 				}
 			}
 
