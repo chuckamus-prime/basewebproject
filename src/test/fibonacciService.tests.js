@@ -1,6 +1,8 @@
 /**
  * Created by ghart on 7/19/2016.
  */
+var module = require('../scripts/angular-mocks/angular-mocks.js');
+
 describe('ExampleApp.FibonacciService', function() {
 
 	var FibonacciService;
