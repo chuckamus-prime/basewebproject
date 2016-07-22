@@ -6,6 +6,8 @@
 		"grunt": "",
 		"grunt-contrib-less": "",
 		"@ryancavanaugh/systemjs": "",
+		"@ryancavanaugh/jasmine": "",
+		"@ryancavanaugh/angularjs": "",
 		"grunt-ts":"",
 		"grunt-contrib-jasmine":""
 	}

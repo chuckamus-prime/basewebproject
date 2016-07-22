@@ -25,10 +25,17 @@ module.exports = function (grunt) {
 			}
 		},
 		jasmine: {
+			options:{
+
+			},
 			unit: {
-				src: ['src/scripts/systemjs/system.js', 'src/test/test.bootstrap.js','src/scripts/angular-mocks/*.js'],
-				options: {
-					specs: ['src/test/*.js']
+				src: [ 'src/test/test.bootstrap.js']
+				,options: {
+					vendor:['src/scripts/requirejs/require.js','src/scripts/systemjs/system.src.js','src/scripts/systemjs/system-polyfills.src.js','src/test/system.config.js'],
+					summary:true,
+					keepRunner:true,
+					outfile:'src/test/generatedSpecRunner.html',
+					specs: ['src/test/specs/*.js']
 				}
 			}
 		}

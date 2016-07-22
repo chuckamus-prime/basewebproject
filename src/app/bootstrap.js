@@ -1,7 +1,7 @@
 "use strict";
-System.import('src/app/app').then(dependencies, console.error.bind(console));
+System.import('app').then(dependencies, console.error.bind(console));
 function dependencies() {
-    System.import('src/app/dependencies').then(bootstrap, console.error.bind(console));
+    System.import('dependencies').then(bootstrap, console.error.bind(console));
 }
 function bootstrap() {
     angular.element(document).ready(function () {
