@@ -15,6 +15,7 @@ System.register([], function(exports_1, context_1) {
             });
         });
     }
+    exports_1("testFib", testFib);
     return {
         setters:[],
         execute: function() {

@@ -1,12 +1,11 @@
-/**
- * Created by csailors on 7/22/2016.
- */
+///<reference path="../../../node_modules/@ryancavanaugh/angularjs/angular-mocks.d.ts" />
+///<reference path="../../../node_modules/@ryancavanaugh/jasmine/jasmine.d.ts" />
 'use strict';
 System.import('test/dependencies').then(testFib, console.error.bind(console));
 
 import {FibonacciService} from 'app/services/FibonacciService';
 
-function testFib() {
+export function testFib() {
 	describe ('ExampleApp.FibonacciService', function () {
 
 		var fibonacciService : FibonacciService;
@@ -23,5 +22,4 @@ function testFib() {
 		});
 	});
 }
-
 
