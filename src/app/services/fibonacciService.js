@@ -27,8 +27,8 @@ System.register(["../app"], function(exports_1, context_1) {
                 return FibonacciService;
             }());
             exports_1("FibonacciService", FibonacciService);
-            app_1.getModule().service(FibonacciService);
+            app_1.getModule().service('FibonacciService', [FibonacciService]);
         }
     }
 });
-//# sourceMappingURL=fibonacciService.js.map
+//# sourceMappingURL=FibonacciService.js.map

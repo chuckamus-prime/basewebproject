@@ -16,4 +16,4 @@ export class FibonacciService{
 	};
 
 }
-getModule().service(FibonacciService);
+getModule().service('FibonacciService', [FibonacciService]);
