@@ -29,15 +29,22 @@ module.exports = function (grunt) {
 
 			},
 			unit: {
-				src: ['src/test/test.bootstrap.js'],
-				force:true,
+				src: [],//we could call our own boot.js file here to override the basewebproject/.grunt/boot.js implementation
 				options: {
-					vendor:['src/scripts/requirejs/require.js','src/scripts/systemjs/system.src.js','src/scripts/systemjs/system-polyfills.src.js'],
+					polyfills:
+							[
+								'src/scripts/requirejs/require.js',
+							 	'src/scripts/systemjs/system.src.js',
+							 	'src/scripts/systemjs/system-polyfills.src.js',
+							 	'src/test/test.bootstrap.js'//by adding the bootstrap here, we make sure our bootstrap
+								//for system is loaded before the jasmine libraries.
+							],
+					vendor:[],
 					summary:true,
 					keepRunner:true,
-					outfile:'src/test/generatedSpecRunner.html',
-					force:true,
-					specs: ['src/test/specs/dummySpec.js' ]
+					outfile:'src/test/generatedSpecRunner.html',//we generate a html test runner page to review the order of scripts.
+					//however, phantomjs may not run the same way.
+					specs: []//since we are loading the specs with systemjs, this is empty here.
 				}
 			}
 		}
