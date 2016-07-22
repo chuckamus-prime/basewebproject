@@ -13,8 +13,9 @@ System.config({
 	},
 	transpiler:null,
 	map: {
-		app: "../app",
+		app: "../../src/app",
 		scripts: "../scripts",
+		test:"./",
 		node_modules:'../../node_modules'
 	}
 });

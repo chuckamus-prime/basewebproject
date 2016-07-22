@@ -29,13 +29,13 @@ module.exports = function (grunt) {
 
 			},
 			unit: {
-				src: [ 'src/test/test.bootstrap.js']
+				src: [ 'src/test/specs/*.js']
 				,options: {
 					vendor:['src/scripts/requirejs/require.js','src/scripts/systemjs/system.src.js','src/scripts/systemjs/system-polyfills.src.js','src/test/system.config.js'],
 					summary:true,
 					keepRunner:true,
 					outfile:'src/test/generatedSpecRunner.html',
-					specs: ['src/test/specs/*.js']
+					specs: []
 				}
 			}
 		}
