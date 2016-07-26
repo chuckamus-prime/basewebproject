@@ -21,12 +21,9 @@ module.exports = function (grunt) {
 		},
 		typings: {
 			install: {
-				"globalDependencies": {
-				"es6-shim": "github:DefinitelyTyped/DefinitelyTyped/es6-shim/es6-shim.d.ts#6697d6f7dadbf5773cb40ecda35a76027e0783b2"
-				},
-				"globalDevDependencies":{
-					"jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#26c98c8a9530c44f8c801ccc3b2057e2101187ee"
-				}}
+				//This will pull the typings from typings.json.  This allows us to avoid
+				// installing typings globally.
+				}
 		},
 		karma:{
 			unit: {
