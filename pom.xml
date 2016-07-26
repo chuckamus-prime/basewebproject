@@ -126,6 +126,26 @@
 								<include>Site.css</include>
 							</includes>
 						</fileset>
+						<fileset>
+							<directory>${basedir}/src/app/templates</directory>
+							<includes>
+								<include>*.css</include>
+							</includes>
+						</fileset>
+						<fileset>
+							<directory>${basedir}/src/app</directory>
+							<includes>
+								<include>**/*.js</include>
+								<include>**/*.js.map</include>
+							</includes>
+						</fileset>
+						<fileset>
+							<directory>${basedir}/src/tests/specs</directory>
+							<includes>
+								<include>**/*.js</include>
+								<include>**/*.js.map</include>
+							</includes>
+						</fileset>
 					</filesets>
 				</configuration>
 			</plugin>

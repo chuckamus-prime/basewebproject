@@ -91,10 +91,18 @@ module.exports = function (grunt) {
 		},
 		less : {
 			default : {
+				files: [
+					{
+						expand: true,
+						cwd: 'src/app/templates',
+						src: ['*.less'],
+						dest: 'src/app/templates',
+						ext: '.css'
+					},
+				{'src/content/Site.css':'src/content/Site.less'}],
 				options : {
-					paths : ['src/content/**']
-				},
-				files : [{src : ['src/content/Site.less'], dest : 'src/content/Site.css'}]
+
+				}
 			}
 		}
 	});
