@@ -3,20 +3,21 @@ module.exports = function (grunt) {
 	grunt.initConfig ({
 		ts : {
 			options : {
-				compiler : './node_modules/typescript/bin/tsc'
+				compiler : './node_modules/typescript/bin/tsc',
 				//note, this relies on the package.json file to specify the typescript version the project is using.
+				"module" : "system",
+				"target" : "ES5",
+				"moduleResolution" : "node",
+				"emitDecoratorMetadata" : true,
+				"noImplicitAny" : false,
+				"removeComments" : true,
+				"sourceMap" : true
 			},
 			default : {
-				src : ['./typings/globals/*/*.d.ts','src/**/*.ts'],
-				"options" : {
-					"module" : "system",
-					"target" : "ES5",
-					"moduleResolution" : "node",
-					"emitDecoratorMetadata" : true,
-					"noImplicitAny" : false,
-					"removeComments" : true,
-					"sourceMap" : true
-				}
+				src : ['./typings/globals/*/*.d.ts','src/**/*.ts']
+			},
+			test : {
+				src : ['./typings/globals/*/*.d.ts','src/tests/helpers/typings/*.d.ts','src/**/*.ts']
 			}
 		},
 		typings: {
@@ -58,6 +59,7 @@ module.exports = function (grunt) {
 
 
 					{src: 'karma-test-shim.js', included: true, watched: true},
+					{src: 'src/tests/helpers/matchers.js', included: true, watched: true},
 
 					// paths loaded via module imports
 					// Angular itself
@@ -77,7 +79,7 @@ module.exports = function (grunt) {
 					{src: 'src/**/*.js.map', included: false, watched: false},
 
 					//our spec files
-					{src:'src/tests/**/*Spec.js'}
+					{src:'src/tests/**/*.test.js'}
 
 					],
 
@@ -113,7 +115,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask ('default', ['ts:default', 'less:default']);
 	grunt.registerTask ('compile', ['typings:install','ts:default', 'less:default']);
-	grunt.registerTask ('test', ['karma:unit']);
+	grunt.registerTask ('test', ['ts:test','karma:unit']);
 	//We need to add Jasmine to the test task above
 	grunt.registerTask ('deploy', ['ts:default', 'less:default']);
 	grunt.registerTask ('default', 'Log some stuff.', function () {
