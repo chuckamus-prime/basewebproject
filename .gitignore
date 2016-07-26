@@ -3,6 +3,7 @@ target/
 node_modules
 .tscache
 .idea/workspace.xml
+typings
 
 # Windows image file caches
 Thumbs.db
