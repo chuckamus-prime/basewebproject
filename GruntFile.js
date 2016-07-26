@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 				"sourceMap" : true
 			},
 			default : {
-				src : ['./typings/globals/*/*.d.ts','src/**/*.ts']
+				src : ['./typings/globals/*/*.d.ts','src/app/**/*.ts']
 			},
 			test : {
 				src : ['./typings/globals/*/*.d.ts','src/tests/helpers/typings/*.d.ts','src/**/*.ts']
