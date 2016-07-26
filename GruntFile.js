@@ -35,7 +35,51 @@ module.exports = function (grunt) {
 
 				logLevel: 'debug',
 
-				files: [{src:'src/**/*.js'}],
+				files: [
+
+					// Polyfills.
+					{src:'node_modules/es6-shim/es6-shim.js'},
+
+					{src:'node_modules/reflect-metadata/Reflect.js'},
+
+					// System.js for module loading
+					{src:'node_modules/systemjs/dist/system-polyfills.js'},
+					{src:'node_modules/systemjs/dist/system.src.js'},
+
+					// Zone.js dependencies
+					{src:'node_modules/zone.js/dist/zone.js'},
+					{src:'node_modules/zone.js/dist/jasmine-patch.js'},
+					{src:'node_modules/zone.js/dist/async-test.js'},
+					{src:'node_modules/zone.js/dist/fake-async-test.js'},
+
+					// RxJs.
+					{ src: 'node_modules/rxjs/**/*.js', included: false, watched: false },
+					{ src: 'node_modules/rxjs/**/*.js.map', included: false, watched: false },
+
+
+					{src: 'karma-test-shim.js', included: true, watched: true},
+
+					// paths loaded via module imports
+					// Angular itself
+					{src: 'node_modules/@angular/**/*.js', included: false, watched: true},
+					{src: 'node_modules/@angular/**/*.js.map', included: false, watched: true},
+
+					// Our built application code
+					{src: 'src/**/*.js', included: false, watched: true},
+
+					// paths loaded via Angular's component compiler
+					// (these paths need to be rewritten, see proxies section)
+					{src: 'src/**/*.html', included: false, watched: true},
+					{src: 'src/**/*.css', included: false, watched: true},
+
+					// paths to support debugging with source maps in dev tools
+					{src: 'src/**/*.ts', included: false, watched: false},
+					{src: 'src/**/*.js.map', included: false, watched: false},
+
+					//our spec files
+					{src:'src/tests/**/*Spec.js'}
+
+					],
 
 				reporters: ['progress'],
 				port: 9876,
