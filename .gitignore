@@ -3,6 +3,13 @@ target/
 node_modules
 .tscache
 .idea/workspace.xml
+src/test/specs/*.js
+src/test/specs/*.js.map
+src/test/*.html
+src/test/test.bootstrap.js
+src/test/test.bootstrap.js.map
+src/test/dependencies.js
+src/test/dependencies.js.map
 
 # Windows image file caches
 Thumbs.db

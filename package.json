@@ -3,14 +3,12 @@
 	"version": "0.0.1",
 	"private": true,
 	"devDependencies": {
-		"angular-mocks":"1.5.3",
 		"grunt": "",
 		"grunt-contrib-less": "",
+		"@ryancavanaugh/systemjs": "",
+		"@ryancavanaugh/jasmine": "",
+		"@ryancavanaugh/angularjs": "",
 		"grunt-ts":"",
-		"karma":"",
-		"grunt-karma":"",
-		"jasmine-core":"",
-		"karma-jasmine":"",
-		"karma-phantomjs-launcher":""
+		"grunt-contrib-jasmine":""
 	}
 }
