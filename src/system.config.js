@@ -4,7 +4,8 @@
 	var map = {
 		'app':                        'app', // 'dist',
 		'@angular':                   '../node_modules/@angular',
-		'rxjs':                       '../node_modules/rxjs'
+		'rxjs':                       '../node_modules/rxjs',
+		'@angular2-material':		  '../node_modules/@angular2-material'
 	};
 	// packages tells the System loader how to load when no filename and/or no extension
 	var packages = {
@@ -20,6 +21,13 @@
 		'platform-browser',
 		'platform-browser-dynamic'
 	];
+
+	var materialPkgs = [
+		'core',
+		'button',
+		'card'
+	];
+
 	// Individual files (~300 requests):
 	function packIndex(pkgName) {
 		packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
@@ -32,6 +40,11 @@
 	var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
 	// Add package entries for angular packages
 	ngPackageNames.forEach(setPackageConfig);
+
+	materialPkgs.forEach(function (pkg) {
+		packages[("@angular2-material/" + pkg)] = { main: pkg + ".js" };
+	});
+
 	var config = {
 		map: map,
 		packages: packages
