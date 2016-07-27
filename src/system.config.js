@@ -35,7 +35,8 @@
 		'checkbox',
 		'input',
 		'radio',
-		'icon'
+		'icon',
+		'grid-list'
 	];
 
 	// Individual files (~300 requests):

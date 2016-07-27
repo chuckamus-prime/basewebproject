@@ -14,6 +14,7 @@ import {MD_RADIO_DIRECTIVES} from '@angular2-material/radio';
 import {MD_ICON_DIRECTIVES} from '@angular2-material/icon';
 import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
 import {MdUniqueSelectionDispatcher} from '@angular2-material/core/coordination/unique-selection-dispatcher';
+import {MD_GRID_LIST_DIRECTIVES} from '@angular2-material/grid-list';
 
 
 
@@ -35,7 +36,8 @@ import {MdUniqueSelectionDispatcher} from '@angular2-material/core/coordination/
 		MD_INPUT_DIRECTIVES,
 		MD_RADIO_DIRECTIVES,
 		MD_ICON_DIRECTIVES,
-		MdIcon
+		MdIcon,
+		MD_GRID_LIST_DIRECTIVES
 	]
 })
 export class AppComponent {
@@ -46,6 +48,13 @@ export class AppComponent {
 		{name: 'Greg', position: 'Sr. Programmer Analyst'},
 	];
 
+	tiles: any[] = [
+		{text: 'One', cols: 3, rows: 1, color: 'lightblue'},
+		{text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
+		{text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
+		{text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
+	];
+	
 	progress: number = 0;
 	constructor() {
 		// Update the value for the progress-bar on an interval.
