@@ -42,7 +42,7 @@ System.register(['@angular/core/testing', '@angular/core', '../../app/components
                         .createAsync(TestComponent).then(function (fixture) {
                         fixture.detectChanges();
                         var compiled = fixture.debugElement.nativeElement;
-                        expect(compiled).toContainText('Content');
+                        expect(compiled).toHaveText('Content');
                     });
                 })));
                 it('should include a title', testing_1.async(testing_1.inject([testing_1.TestComponentBuilder], function (tcb) {
@@ -50,11 +50,11 @@ System.register(['@angular/core/testing', '@angular/core', '../../app/components
                         .createAsync(TestComponent).then(function (fixture) {
                         fixture.detectChanges();
                         var compiled = fixture.debugElement.nativeElement;
-                        expect(compiled).toContainText('ABC');
+                        expect(compiled).toHaveText('ABC');
                     });
                 })));
             });
         }
     }
 });
-//# sourceMappingURL=border.component.test.ignore.js.map
+//# sourceMappingURL=border.component.test.js.map

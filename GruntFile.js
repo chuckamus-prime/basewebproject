@@ -9,6 +9,7 @@ module.exports = function (grunt) {
 				"target" : "ES5",
 				"moduleResolution" : "node",
 				"emitDecoratorMetadata" : true,
+				"experimentalDecorators": true,
 				"noImplicitAny" : false,
 				"removeComments" : true,
 				"sourceMap" : true
@@ -28,8 +29,6 @@ module.exports = function (grunt) {
 		},
 		karma:{
 			unit: {
-				//configFile: 'karma.conf.js'
-
 				basePath: '',
 
 				frameworks: ['jasmine'],
@@ -47,6 +46,10 @@ module.exports = function (grunt) {
 					{src:'node_modules/systemjs/dist/system-polyfills.js'},
 					{src:'node_modules/systemjs/dist/system.src.js'},
 
+					//Do not load this system.config.js.  The config for sysetmjs
+					//is included in the karma-test-shim.js
+					//{src:'src/system.config.js', included: false, watched: true},
+
 					// Zone.js dependencies
 					{src:'node_modules/zone.js/dist/zone.js'},
 					{src:'node_modules/zone.js/dist/jasmine-patch.js'},
@@ -54,8 +57,8 @@ module.exports = function (grunt) {
 					{src:'node_modules/zone.js/dist/fake-async-test.js'},
 
 					// RxJs.
-					{ src: 'node_modules/rxjs/**/*.js', included: false, watched: false },
-					{ src: 'node_modules/rxjs/**/*.js.map', included: false, watched: false },
+					{ src:'node_modules/rxjs/**/*.js', included: false, watched: false },
+					{ src:'node_modules/rxjs/**/*.js.map', included: false, watched: false },
 
 
 					{src: 'karma-test-shim.js', included: true, watched: true},
@@ -68,6 +71,7 @@ module.exports = function (grunt) {
 
 					// Our built application code
 					{src: 'src/**/*.js', included: false, watched: true},
+//					{src: 'src/tests/**/*.js', included: false, watched: true},
 
 					// paths loaded via Angular's component compiler
 					// (these paths need to be rewritten, see proxies section)
@@ -76,12 +80,18 @@ module.exports = function (grunt) {
 
 					// paths to support debugging with source maps in dev tools
 					{src: 'src/**/*.ts', included: false, watched: false},
-					{src: 'src/**/*.js.map', included: false, watched: false},
+					{src: 'src/**/*.js.map', included: false, watched: false}
 
 					//our spec files
-					{src:'src/tests/**/*.test.js'}
+					//{src:'src/tests/**/*.test.js'}
 
 					],
+
+				// proxied base paths
+				proxies: {
+					// required for component assests fetched by Angular's compiler
+					"/app/": "/base/src/app/"
+				},
 
 				reporters: ['progress'],
 				port: 9876,
