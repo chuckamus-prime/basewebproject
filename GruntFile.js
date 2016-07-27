@@ -100,7 +100,9 @@ module.exports = function (grunt) {
 					{src: 'node_modules/@angular/**/*.js.map', included: false, watched: true},
 
 					// Our built application code
-					{src: 'src/**/*.js', included: false, watched: true},
+					{src: 'src/app/**/*.js', included: false, watched: true},
+					{src: 'src/tests/**/*.js', included: false, watched: true},
+
 //					{src: 'src/tests/**/*.js', included: false, watched: true},
 
 					// paths loaded via Angular's component compiler
@@ -127,8 +129,8 @@ module.exports = function (grunt) {
 				port: 9876,
 				colors: true,
 				autoWatch: true,
-				browsers: ['PhantomJS', 'Chrome'],
-				singleRun: false
+				browsers: ['PhantomJS'],
+				singleRun: true
 			}
 		},
 		less : {
