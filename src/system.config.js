@@ -31,7 +31,11 @@
 		'progress-circle',
 		'progress-bar',
 		'sidenav',
-		'toolbar'
+		'toolbar',
+		'checkbox',
+		'input',
+		'radio',
+		'icon'
 	];
 
 	// Individual files (~300 requests):

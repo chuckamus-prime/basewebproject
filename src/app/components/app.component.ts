@@ -8,12 +8,18 @@ import {MD_PROGRESS_BAR_DIRECTIVES} from '@angular2-material/progress-bar';
 import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
 import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
 import {MD_TABS_DIRECTIVES} from '@angular2-material/tabs';
+import {MD_CHECKBOX_DIRECTIVES} from '@angular2-material/checkbox';
+import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
+import {MD_RADIO_DIRECTIVES} from '@angular2-material/radio';
+import {MD_ICON_DIRECTIVES} from '@angular2-material/icon';
+import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
 
 
 
 @Component({
 	selector: 'my-app',
 	templateUrl: 'app/templates/styleShowcase.html',
+	providers: [MdIconRegistry],
 	directives: [
 		NgFor,
 		MD_CARD_DIRECTIVES,
@@ -23,7 +29,12 @@ import {MD_TABS_DIRECTIVES} from '@angular2-material/tabs';
 		MD_LIST_DIRECTIVES,
 		MD_PROGRESS_BAR_DIRECTIVES,
 		MD_PROGRESS_CIRCLE_DIRECTIVES,
-		MD_TABS_DIRECTIVES
+		MD_TABS_DIRECTIVES,
+		MD_CHECKBOX_DIRECTIVES,
+		MD_INPUT_DIRECTIVES,
+		MD_RADIO_DIRECTIVES,
+		MD_ICON_DIRECTIVES,
+		MdIcon
 	]
 })
 export class AppComponent {
