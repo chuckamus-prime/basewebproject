@@ -15,9 +15,15 @@
 		"systemjs":"",
 		"es6-promise": "^3.0.2",
 		"es6-shim": "^0.35.0",
-		"@angular2-material/core":"v2.0.0-alpha.6",
-		"@angular2-material/button":"v2.0.0-alpha.6",
-		"@angular2-material/card":"v2.0.0-alpha.6"
+		"@angular2-material/core":"^2.0.0-alpha.6",
+		"@angular2-material/button":"^2.0.0-alpha.6",
+		"@angular2-material/card":"^2.0.0-alpha.6",
+		"@angular2-material/tabs":"^2.0.0-alpha.6",
+		"@angular2-material/list":"^2.0.0-alpha.6",
+		"@angular2-material/progress-circle":"^2.0.0-alpha.6",
+		"@angular2-material/progress-bar":"^2.0.0-alpha.6",
+		"@angular2-material/sidenav":"^2.0.0-alpha.6",
+		"@angular2-material/toolbar":"^2.0.0-alpha.6"
 	},
 	"devDependencies": {
 		"grunt": "",
@@ -30,5 +36,6 @@
 		"jasmine-core": "2.3.2",
 		"karma-jasmine": "^0.3.6",
 		"karma-phantomjs-launcher": ""
+
 	}
 }

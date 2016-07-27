@@ -25,7 +25,13 @@
 	var materialPkgs = [
 		'core',
 		'button',
-		'card'
+		'card',
+		'tabs',
+		'list',
+		'progress-circle',
+		'progress-bar',
+		'sidenav',
+		'toolbar'
 	];
 
 	// Individual files (~300 requests):
