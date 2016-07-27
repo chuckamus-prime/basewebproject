@@ -54,7 +54,21 @@ export class AppComponent {
 		{text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
 		{text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
 	];
-	
+
+	menuItems: Object[] = [
+		{
+			name: "My Account",
+		 	description: "Edit account information",
+			icon: "face"
+		},
+		{
+			name: "Help",
+			description: "Get access to FAQs",
+			icon: "help"
+		}
+
+	]
+
 	progress: number = 0;
 	constructor() {
 		// Update the value for the progress-bar on an interval.
