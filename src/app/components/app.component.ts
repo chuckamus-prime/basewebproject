@@ -39,10 +39,11 @@ import {MdUniqueSelectionDispatcher} from '@angular2-material/core/coordination/
 	]
 })
 export class AppComponent {
-	foods: any[] = [
-		{name: 'Pizza', rating: 'Excellent'},
-		{name: 'Burritos', rating: 'Great'},
-		{name: 'French fries', rating: 'Pretty good'},
+	people: any[] = [
+		{name: 'Suresh', position: 'Delivery Manager'},
+		{name: 'Erika', position: 'Development Lead'},
+		{name: 'Chuck', position: 'Solutions Architect'},
+		{name: 'Greg', position: 'Sr. Programmer Analyst'},
 	];
 
 	progress: number = 0;
