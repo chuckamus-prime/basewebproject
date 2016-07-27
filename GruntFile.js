@@ -1,6 +1,36 @@
 module.exports = function (grunt) {
 	"use strict";
 	grunt.initConfig ({
+		copy: {
+			main: {
+				nonull: true,
+
+				files: [
+					//angular needs
+					{expand: true, src: ['./node_modules/@angular/common/bundles/*.umd.js'], dest: 'src/scripts/angular/common/',flatten: true, filter: 'isFile'},
+					{expand: true, src: ['./node_modules/@angular/compiler/bundles/*.umd.js'], dest: 'src/scripts/angular/compiler/',flatten: true, filter: 'isFile'},
+					{expand: true, src: ['./node_modules/@angular/core/bundles/*.umd.js'], dest: 'src/scripts/angular/core/',flatten: true, filter: 'isFile'},
+					{expand: true, src: ['./node_modules/@angular/forms/bundles/*.umd.js'], dest: 'src/scripts/angular/forms/',flatten: true, filter: 'isFile'},
+					{expand: true, src: ['./node_modules/@angular/http/bundles/*.umd.js'], dest: 'src/scripts/angular/http/',flatten: true, filter: 'isFile'},
+					{expand: true, src: ['./node_modules/@angular/platform-browser/bundles/*.umd.js'], dest: 'src/scripts/angular/platform-browser/',flatten: true, filter: 'isFile'},
+					{expand: true, src: ['./node_modules/@angular/platform-browser-dynamic/bundles/*.umd.js'], dest: 'src/scripts/angular/platform-browser-dynamic/',flatten: true, filter: 'isFile'},
+
+					//es6-shim
+					{expand: true, cwd:'./node_modules', src: ['es6-shim/es6-shim.js'], dest: 'src/scripts/es6-shim/',flatten: true, filter: 'isFile'},
+
+					//rxjs
+					{expand: true, cwd:'./node_modules', src:'rxjs/**', dest: 'src/scripts/'},
+
+					//zone.js
+					{expand: true, cwd:'./node_modules', src:'zone.js/dist/**', dest: 'src/scripts/'},
+
+					//systemjs
+					{expand: true, cwd:'./node_modules', src:'systemjs/dist/**', dest: 'src/scripts/'}
+
+
+				]
+			}
+		},
 		ts : {
 			options : {
 				compiler : './node_modules/typescript/bin/tsc',
@@ -34,7 +64,7 @@ module.exports = function (grunt) {
 
 				frameworks: ['jasmine'],
 
-				logLevel: 'debug',
+				logLevel: 'info',
 
 				files: [
 
@@ -76,10 +106,10 @@ module.exports = function (grunt) {
 
 					// paths to support debugging with source maps in dev tools
 					{src: 'src/**/*.ts', included: false, watched: false},
-					{src: 'src/**/*.js.map', included: false, watched: false},
+					{src: 'src/**/*.js.map', included: false, watched: false}
 
 					//our spec files
-					{src:'src/tests/**/*.test.js'}
+					,{src:'src/tests/**/*.test.js', included: false, watched: true}
 
 					],
 
@@ -87,8 +117,8 @@ module.exports = function (grunt) {
 				port: 9876,
 				colors: true,
 				autoWatch: true,
-				browsers: ['PhantomJS'],
-				singleRun: true
+				browsers: ['PhantomJS', 'Chrome'],
+				singleRun: false
 			}
 		},
 		less : {
@@ -114,7 +144,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-karma');
 
 	grunt.registerTask ('default', ['ts:default', 'less:default']);
-	grunt.registerTask ('compile', ['typings:install','ts:default', 'less:default']);
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.registerTask ('test', ['ts:test','karma:unit']);
 	//We need to add Jasmine to the test task above
 	grunt.registerTask ('deploy', ['ts:default', 'less:default']);

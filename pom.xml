@@ -44,7 +44,7 @@
 										<exclude>**/*.map</exclude>
 										<exclude>**/*.less</exclude>
 										<exclude>**/angular-material*.css</exclude>
-										<exclude>test/</exclude>
+										<exclude>tests/</exclude>
 									</excludes>
 								</resource>
 							</resources>

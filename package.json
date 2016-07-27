@@ -26,6 +26,8 @@
 		"grunt-karma":"",
 		"jasmine-core": "2.3.2",
 		"karma-jasmine": "^0.3.6",
-		"karma-phantomjs-launcher": ""
+		"karma-phantomjs-launcher": "",
+		"karma-chrome-launcher": "",
+		"grunt-contrib-copy":""
 	}
 }
