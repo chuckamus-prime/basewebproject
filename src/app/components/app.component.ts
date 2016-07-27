@@ -13,13 +13,14 @@ import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
 import {MD_RADIO_DIRECTIVES} from '@angular2-material/radio';
 import {MD_ICON_DIRECTIVES} from '@angular2-material/icon';
 import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
+import {MdUniqueSelectionDispatcher} from '@angular2-material/core/coordination/unique-selection-dispatcher';
 
 
 
 @Component({
 	selector: 'my-app',
 	templateUrl: 'app/templates/styleShowcase.html',
-	providers: [MdIconRegistry],
+	providers: [MdIconRegistry, MdUniqueSelectionDispatcher],
 	directives: [
 		NgFor,
 		MD_CARD_DIRECTIVES,

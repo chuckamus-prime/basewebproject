@@ -26,6 +26,19 @@
 				</md-card>
 			</md-content>
 
+
+			<md-content>
+				<h2>Icon Button</h2>
+
+				<md-card>
+					<span class="app-action">
+					  <button md-fab>
+						  <md-icon>check circle</md-icon>
+					  </button>
+					</span>
+				</md-card>
+
+			</md-content>
 			<md-content>
 				<h2>Checkboxes</h2>
 				<md-card>
@@ -36,12 +49,12 @@
 				</md-card>
 			</md-content>
 
-			<!--<md-card>
-				<md-radio-button name="symbol">Alpha</md-radio-button>
-				<md-radio-button name="symbol">Beta</md-radio-button>
-				<md-radio-button name="symbol" disabled>Gamma</md-radio-button>
+			<md-card>
+				<md-radio-button name="symbol">One</md-radio-button>
+				<md-radio-button name="symbol">Two</md-radio-button>
+				<md-radio-button name="symbol" disabled>Three</md-radio-button>
 			</md-card>
-	-->
+
 			<md-content>
 				<h2>Input boxes</h2>
 				<md-card class="app-input-section">
@@ -53,17 +66,17 @@
 						</md-hint>
 					</md-input>
 
-					<md-input>
-						<md-placeholder>
-							<i class="material-icons app-input-icon">android</i> Favorite phone
-						</md-placeholder>
+					<md-input placeholder="Favorite phone">
+						<span md-prefix>
+							<i class="material-icons app-input-icon">android</i>&nbsp;
+						</span>
 					</md-input>
 
 					<md-input placeholder="Motorcycle model">
-        <span md-prefix>
-          <i class="material-icons app-input-icon">motorcycle</i>
-          &nbsp;
-        </span>
+						<span md-prefix>
+						  <i class="material-icons app-input-icon">motorcycle</i>
+						  &nbsp;
+						</span>
 					</md-input>
 				</md-card>
 			</md-content>
@@ -97,7 +110,6 @@
 								mode="indeterminate"
 								aria-label="Indeterminate progress-bar example"></md-progress-bar>
 					</label>
-
 					<label>
 						Determinate progress bar - {{progress}}%
 						<md-progress-bar
@@ -134,21 +146,20 @@
 				</md-card>
 			</md-content>
 
-		<md-content>
-			<h2>Icons</h2>
+			<md-content>
+				<h2>Icons</h2>
 
-			<md-card>
-				<md-icon>build</md-icon>
-				<md-icon>home</md-icon>
-			</md-card>
+				<md-card>
+					<md-icon>build</md-icon>
+					<md-icon>home</md-icon>
+				</md-card>
+			</md-content>
+
 		</md-content>
 
-		</md-content>
+
 
 	</div>
 </md-sidenav-layout>
 
-<!--
-<span class="app-action">
-  <button md-fab><md-icon>check circle</md-icon></button>
-</span>-->
+

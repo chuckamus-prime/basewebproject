@@ -22,7 +22,7 @@
 		'platform-browser-dynamic'
 	];
 
-	var materialPkgs = [
+	var ngMaterialPackageNames = [
 		'core',
 		'button',
 		'card',
@@ -51,7 +51,7 @@
 	// Add package entries for angular packages
 	ngPackageNames.forEach(setPackageConfig);
 
-	materialPkgs.forEach(function (pkg) {
+	ngMaterialPackageNames.forEach(function (pkg) {
 		packages[("@angular2-material/" + pkg)] = { main: pkg + ".js" };
 	});
 
