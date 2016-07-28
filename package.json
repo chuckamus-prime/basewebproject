@@ -21,11 +21,13 @@
 		"grunt-contrib-less": "",
 		"grunt-ts":"",
 		"typescript": "^1.8.10",
+		"grunt-typings":"",
 		"karma": "^0.13.22",
 		"grunt-karma":"",
 		"jasmine": "2.3.2",
 		"karma-jasmine": "^0.3.6",
 		"karma-phantomjs-launcher": "",
-		"karma-chrome-launcher": ""
+		"karma-chrome-launcher": "",
+		"grunt-contrib-copy":""
 	}
 }
