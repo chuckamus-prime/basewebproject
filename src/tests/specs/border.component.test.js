@@ -42,7 +42,7 @@ System.register(['@angular/core/testing', '@angular/core', '../../app/components
                         .createAsync(TestComponent).then(function (fixture) {
                         fixture.detectChanges();
                         var compiled = fixture.debugElement.nativeElement;
-                        expect(compiled).toHaveText('Content');
+                        expect(compiled).toContainText('Content');
                     });
                 })));
                 it('should include a title', testing_1.async(testing_1.inject([testing_1.TestComponentBuilder], function (tcb) {
@@ -50,7 +50,7 @@ System.register(['@angular/core/testing', '@angular/core', '../../app/components
                         .createAsync(TestComponent).then(function (fixture) {
                         fixture.detectChanges();
                         var compiled = fixture.debugElement.nativeElement;
-                        expect(compiled).toHaveText('ABC');
+                        expect(compiled).toContainText('ABC');
                     });
                 })));
             });

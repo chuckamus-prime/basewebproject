@@ -11,8 +11,8 @@
 		"@angular/platform-browser": "2.0.0-rc.4",
 		"@angular/platform-browser-dynamic": "2.0.0-rc.4",
 		"rxjs" :"5.0.0-beta.6",
-		"zone.js":"^0.6.6",
-		"systemjs":"",
+		"zone.js":"^0.6.12",
+		"systemjs":"^0.19.26",
 		"es6-promise": "^3.0.2",
 		"es6-shim": "^0.35.0"
 	},
@@ -21,10 +21,9 @@
 		"grunt-contrib-less": "",
 		"grunt-ts":"",
 		"typescript": "^1.8.10",
-		"grunt-typings":"",
 		"karma": "^0.13.22",
 		"grunt-karma":"",
-		"jasmine-core": "2.3.2",
+		"jasmine": "2.3.2",
 		"karma-jasmine": "^0.3.6",
 		"karma-phantomjs-launcher": "",
 		"karma-chrome-launcher": ""
