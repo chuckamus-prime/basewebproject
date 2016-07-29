@@ -155,7 +155,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	grunt.registerTask ('default', ['ts:default', 'less:default']);
-	grunt.registerTask ('compile', ['copy:main', 'typings:install','ts:default', 'less:default']);
+	grunt.registerTask ('compile', ['copy:main', 'less:default', 'typings:install','ts:default']);
 	grunt.registerTask ('test', ['ts:test','karma:unit']);
 	//We need to add Jasmine to the test task above
 	grunt.registerTask ('deploy', ['ts:default', 'less:default']);
