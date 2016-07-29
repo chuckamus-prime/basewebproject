@@ -2,13 +2,33 @@
 	"name": "application-name",
 	"version": "0.0.1",
 	"private": true,
+	"dependencies": {
+		"@angular/common": "2.0.0-rc.4",
+		"@angular/compiler": "2.0.0-rc.4",
+		"@angular/core": "2.0.0-rc.4",
+		"@angular/forms": "0.2.0",
+		"@angular/http": "2.0.0-rc.4",
+		"@angular/platform-browser": "2.0.0-rc.4",
+		"@angular/platform-browser-dynamic": "2.0.0-rc.4",
+		"reflect-metadata": "0.1.2",
+		"rxjs" :"5.0.0-beta.6",
+		"zone.js":"^0.6.12",
+		"systemjs":"^0.19.26",
+		"es6-promise": "^3.0.2",
+		"es6-shim": "^0.35.0"
+	},
 	"devDependencies": {
 		"grunt": "",
 		"grunt-contrib-less": "",
-		"@ryancavanaugh/systemjs": "",
-		"@ryancavanaugh/jasmine": "",
-		"@ryancavanaugh/angularjs": "",
 		"grunt-ts":"",
-		"grunt-contrib-jasmine":""
+		"typescript": "^1.8.10",
+		"grunt-typings":"",
+		"karma": "^0.13.22",
+		"grunt-karma":"",
+		"jasmine": "2.3.2",
+		"karma-jasmine": "^0.3.6",
+		"karma-phantomjs-launcher": "",
+		"karma-chrome-launcher": "",
+		"grunt-contrib-copy":""
 	}
 }

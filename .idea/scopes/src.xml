@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="src" pattern="file[basewebproject]:*&amp;&amp;!file[basewebproject]:.idea/*&amp;&amp;!file[basewebproject]:node_modules/*" />
+</component>
