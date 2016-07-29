@@ -71,4 +71,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 .idea/copyright/profiles_settings.xml
-*.css
+.idea/typescript-compiler.xml
+.idea/jsLibraryMappings.xml

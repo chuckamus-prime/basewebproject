@@ -1,0 +1,188 @@
+<md-sidenav-layout>
+	<md-sidenav #sidenav mode="side" class="app-sidenav">
+		<md-nav-list>
+			<a md-list-item *ngFor="let item of menuItems">
+			<md-icon md-list-icon>{{item.icon}}</md-icon>
+			<span md-line>{{item.name}}</span>
+			<span md-line>{{item.description}}</span>
+			</a>
+		</md-nav-list>
+	</md-sidenav>
+
+	<md-toolbar color="primary">
+		<button md-icon-button (click)="sidenav.toggle()">
+			<md-icon>menu</md-icon>
+		</button>
+ 		Corvesta Style Showcase
+	</md-toolbar>
+
+	<div class="app-content">
+
+		<md-content class="body-content">
+			<md-content>
+				<h2>Buttons</h2>
+				<md-card>
+					<button md-button>FLAT</button>
+					<button md-raised-button>RAISED</button>
+					<button md-raised-button color="primary">PRIMARY RAISED</button>
+					<button md-raised-button color="accent">ACCENT RAISED</button>
+				</md-card>
+			</md-content>
+
+
+			<md-content>
+				<h2>Icon Button</h2>
+
+				<md-card>
+					<span class="app-action">
+					  <button md-fab>
+						  <md-icon>check circle</md-icon>
+					  </button>
+					</span>
+				</md-card>
+
+			</md-content>
+			<md-content>
+				<h2>Checkboxes</h2>
+				<md-card>
+					<md-checkbox>Unchecked</md-checkbox>
+					<md-checkbox [checked]="true">Checked</md-checkbox>
+					<md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
+					<md-checkbox [disabled]="true">Disabled</md-checkbox>
+				</md-card>
+			</md-content>
+
+			<md-card>
+				<md-radio-button name="symbol">One</md-radio-button>
+				<md-radio-button name="symbol">Two</md-radio-button>
+				<md-radio-button name="symbol" disabled>Three</md-radio-button>
+			</md-card>
+
+			<md-content>
+				<h2>Input boxes</h2>
+				<md-card class="app-input-section">
+					<md-input placeholder="First name"></md-input>
+
+					<md-input #nickname placeholder="Nickname" maxlength="50">
+						<md-hint align="end">
+							{{nickname.characterCount}} / 50
+						</md-hint>
+					</md-input>
+
+					<md-input placeholder="Favorite phone">
+						<span md-prefix>
+							<i class="material-icons app-input-icon">android</i>&nbsp;
+						</span>
+					</md-input>
+
+					<md-input placeholder="Motorcycle model">
+						<span md-prefix>
+						  <i class="material-icons app-input-icon">motorcycle</i>
+						  &nbsp;
+						</span>
+					</md-input>
+				</md-card>
+			</md-content>
+
+			<md-content>
+				<h2>Lists</h2>
+				<md-card>
+					<md-list class="app-list">
+						<md-list-item *ngFor="let person of people">
+							<h3 md-line>{{person.name}}</h3>
+							<i md-line class="demo-2">{{person.position}}</i>
+						</md-list-item>
+					</md-list>
+				</md-card>
+			</md-content>
+
+			<md-content>
+				<h2>Progress Spinners</h2>
+				<md-card>
+					<md-spinner class="app-spinner"></md-spinner>
+					<md-spinner color="accent" class="app-spinner"></md-spinner>
+				</md-card>
+			</md-content>
+			<md-content>
+				<h2>Progress Bars</h2>
+				<md-card>
+					<label>
+						Indeterminate progress-bar
+						<md-progress-bar
+								class="app-progress"
+								mode="indeterminate"
+								aria-label="Indeterminate progress-bar example"></md-progress-bar>
+					</label>
+					<label>
+						Determinate progress bar - {{progress}}%
+						<md-progress-bar
+								class="app-progress"
+								color="accent"
+								mode="determinate"
+								[value]="progress"
+								aria-label="Determinate progress-bar example"></md-progress-bar>
+					</label>
+				</md-card>
+			</md-content>
+
+			<md-content>
+				<h2>Tabs</h2>
+				<md-card>
+					<md-tab-group>
+						<md-tab>
+							<template md-tab-label>
+								Tab One
+							</template>
+							<template md-tab-content>
+								<p>Here is something on tab one</p>
+							</template>
+						</md-tab>
+						<md-tab>
+							<template md-tab-label>
+								Tab Two
+							</template>
+							<template md-tab-content>
+								<p>Here is something on tab two</p>
+							</template>
+						</md-tab>
+					</md-tab-group>
+				</md-card>
+			</md-content>
+
+			<md-content>
+				<h2>Icons</h2>
+
+				<md-card>
+					<md-icon>build</md-icon>
+					<md-icon>home</md-icon>
+				</md-card>
+			</md-content>
+
+			<md-content>
+				<h2>Grid List</h2>
+				<md-grid-list cols="4" [style.background]="'lightblue'" rowHeight="50px">
+					<md-grid-tile>One</md-grid-tile>
+					<md-grid-tile>Two</md-grid-tile>
+					<md-grid-tile>Three</md-grid-tile>
+					<md-grid-tile>Four</md-grid-tile>
+				</md-grid-list>
+			</md-content>
+
+			<md-content>
+				<h2>Grid Tiles</h2>
+				<md-grid-list cols="4" rowHeight="100px">
+					<md-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+								  [style.background]="tile.color">
+						{{tile.text}}
+					</md-grid-tile>
+				</md-grid-list>
+			</md-content>
+
+
+		</md-content>
+
+
+	</div>
+</md-sidenav-layout>
+
+
