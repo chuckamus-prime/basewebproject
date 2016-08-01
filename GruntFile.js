@@ -79,6 +79,7 @@ module.exports = function (grunt) {
 					// Polyfills.
 					{src:'src/scripts/es6-shim/es6-shim.js'},
 
+					//Angular 2 depends on Reflect-Metadata
 					{src:'src/scripts/reflect-metadata/Reflect.js'},
 
 					// System.js for module loading
@@ -89,21 +90,26 @@ module.exports = function (grunt) {
 					//is included in the karma-test-shim.js
 					//{src:'src/system.config.js', included: false, watched: true},
 
-					// Zone.js dependencies
+					// Zone.js dependencies.  Angular2 also depends on Zone
 					{src:'src/scripts/zone.js/dist/zone.js'},
 					{src:'src/scripts/zone.js/dist/jasmine-patch.js'},
 					{src:'src/scripts/zone.js/dist/async-test.js'},
 					{src:'src/scripts/zone.js/dist/fake-async-test.js'},
 
-					// RxJs.
+					// RxJs.  Angular 2 depends on RxJs
 					{ src:'src/scripts/rxjs/**/*.js', included: false, watched: false },
 					{ src:'src/scripts/rxjs/**/*.js.map', included: false, watched: false },
 
-
+					//The Karma test shim overrides the function which starts karma in the
+					//generated test runner html.  The override prevents karma from starting
+					//until all dependencies are loaded through systemjs.  Once they have all
+					//been loaded, the test shim will start Karma.
 					{src: 'karma-test-shim.js', included: true, watched: true},
 					{src: 'src/tests/helpers/matchers.js', included: true, watched: true},
 
-					// paths loaded via module imports
+					// paths loaded via module imports.  (When included: true, the file will be loaded
+					// to the browser as a script tag.  When included: false, the file will be loaded as
+					// a module through systemjs.
 					// Angular itself
 					{src: 'src/scripts/@angular/**/*.js', included: false, watched: true},
 					{src: 'src/scripts/@angular/**/*.js.map', included: false, watched: true},
@@ -120,10 +126,6 @@ module.exports = function (grunt) {
 					// paths to support debugging with source maps in dev tools
 					{src: 'src/**/*.ts', included: false, watched: false},
 					{src: 'src/**/*.js.map', included: false, watched: false}
-
-					//our spec files
-					//{src:'src/tests/**/*.test.js'}
-
 					],
 
 				// proxied base paths

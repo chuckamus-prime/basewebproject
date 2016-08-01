@@ -10,6 +10,9 @@ function isJsFile(path) {
   return path.slice(-3) == '.js';
 }
 
+//!!!! If your tests do not follow the naming convention of "*.test.js",
+//then you must update the convention used below for the tests to be picked
+//up by Karma !!!!
 function isSpecFile(path) {
   return path.slice(-8) == '.test.js';
 }
@@ -61,14 +64,6 @@ System.config(
       main: 'index.js',
       defaultExtension: 'js'
     },
-    // '@angular/router-deprecated': {
-    //   main: 'index.js',
-    //   defaultExtension: 'js'
-    // },
-    // '@angular/router': {
-    //   main: 'index.js',
-    //   defaultExtension: 'js'
-    // },
     'rxjs': {
       defaultExtension: 'js'
     },

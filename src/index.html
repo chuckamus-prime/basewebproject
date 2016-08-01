@@ -8,11 +8,14 @@
 		<!-- 1. Load libraries -->
 		<!-- Polyfill(s) for older browsers -->
 		<!--<script src="../node_modules/core-js/client/shim.min.js"></script>-->
+		<!--Angular2 is dependent on all 3 of these libraries-->
 		<script src="../src/scripts/reflect-metadata/Reflect.js"></script>
 		<script src="../src/scripts/zone.js/dist/zone.js"></script>
-		<script src="../src/scripts/systemjs/dist/system.js"></script>
 		<script src="../src/scripts/rxjs/Rx.js"></script>
 		<!-- 2. Configure SystemJS -->
+		<script src="../src/scripts/systemjs/dist/system.js"></script>
+		<!--Use System.import to ensure the systemjs config file is loaded
+		    before bootstrap is called. -->
 		<script>
 			System.import('system.config.js').then(function () {
 				System.import('app');
