@@ -31,8 +31,9 @@ System.config({
 System.config(
 {
   map: {
-    'rxjs': 'node_modules/rxjs',
-    '@angular': 'node_modules/@angular',
+    'rxjs': 'src/scripts/rxjs',
+    '@angular': 'src/scripts/@angular',
+    'reflect-metadata': 'src/scripts/reflect-metadata',
     'app': 'src'
   },
   packages: {
@@ -69,6 +70,9 @@ System.config(
     //   defaultExtension: 'js'
     // },
     'rxjs': {
+      defaultExtension: 'js'
+    },
+    'reflect-metadata': {
       defaultExtension: 'js'
     }
   }
