@@ -6,13 +6,18 @@
 		'@angular':                   '../src/scripts/@angular',
 		'rxjs':                       '../src/scripts/rxjs',
 		'reflect-metadata':           '../src/scripts/reflect-metadata',
-		'@angular2-material':		  '../src/scripts/@angular2-material'
+		'@angular2-material':		  '../src/scripts/@angular2-material',
+		'primeng':				      '../src/scripts/primeng',
+		'primeui':				      '../src/scripts/primeui'
 	};
 	// packages tells the System loader how to load when no filename and/or no extension
 	var packages = {
 		'app':                        { main: 'bootstrap',  defaultExtension: 'js' },
 		'rxjs':                       { main: 'Rx', defaultExtension: 'js' },
-		'reflect-metadata':           { defaultExtension: 'js' }
+		'reflect-metadata':           { defaultExtension: 'js' },
+		'primeng':           		  { defaultExtension: 'js' }
+		
+
 	};
 	var ngPackageNames = [
 		'common',

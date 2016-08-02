@@ -35,7 +35,13 @@ module.exports = function (grunt) {
 					{expand: true, cwd:'./node_modules', src:'zone.js/dist/**', dest: 'src/scripts/'},
 
 					//systemjs
-					{expand: true, cwd:'./node_modules', src:'systemjs/dist/**', dest: 'src/scripts/'}
+					{expand: true, cwd:'./node_modules', src:'systemjs/dist/**', dest: 'src/scripts/'},
+					
+					//primeng
+					{expand: true, cwd:'./node_modules', src:'primeng/**', dest: 'src/scripts/'},
+
+					//primeui
+					{expand: true, cwd:'./node_modules', src:'primeui/**', dest: 'src/scripts/'}
 
 				]
 			}
