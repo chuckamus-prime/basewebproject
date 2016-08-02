@@ -10,8 +10,8 @@
 	};
 	// packages tells the System loader how to load when no filename and/or no extension
 	var packages = {
-		'app':                        { main: 'bootstrap.js',  defaultExtension: 'js' },
-		'rxjs':                       { defaultExtension: 'js' },
+		'app':                        { main: 'bootstrap',  defaultExtension: 'js' },
+		'rxjs':                       { main: 'Rx', defaultExtension: 'js' },
 		'reflect-metadata':           { defaultExtension: 'js' }
 	};
 	var ngPackageNames = [
