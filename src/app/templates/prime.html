@@ -1,0 +1,56 @@
+<md-content class="body-content">
+	<md-content>
+		<h2>Buttons</h2>
+		<button pButton type="button" label="Submit"></button>
+
+		<!--<p-growl [value]="msgs"></p-growl>
+		<p-splitButton label="Save" icon="fa-check" (onClick)="save()">
+			<p-splitButtonItem icon="fa-close" label="Delete" (onClick)="delete()"></p-splitButtonItem>
+			<p-splitButtonItem icon="fa-refresh" label="Update" (onClick)="update()"></p-splitButtonItem>
+			<p-splitButtonItem icon="fa-link" label="Angular.io" url="http://angular.io"></p-splitButtonItem>
+			<p-splitButtonItem icon="fa-paint-brush" label="Theming" [url]="['Theming']"></p-splitButtonItem>
+		</p-splitButton>-->
+	</md-content>
+
+	<md-content>
+		<h2>Icon Buttons</h2>
+		<button pButton type="button" icon="fa-check" iconPos="left"></button>
+		<button pButton type="button" icon="fa-link" iconPos="left"></button>
+		<button pButton type="button" icon="fa-paintbrush" iconPos="left"></button>
+	</md-content>
+
+	<md-content>
+		<h2>Checkboxes</h2>
+		<button pButton type="button" icon="fa-check" iconPos="left"></button>
+	</md-content>
+
+	<md-content class="body-content">
+		<md-content>
+			<h2>Input</h2>
+			<input type="text" pInputText/>
+			<ui-password-panel>
+				<h3 class="first">Password</h3>
+				<input type="text" pPassword prompt="Please enter a password"/>
+
+			</ui-password-panel>
+		</md-content>
+
+
+		<md-content class="body-content">
+			<md-content>
+				<h2>Dialog</h2>
+				<p-dialog header="Fresh Prince" [(visible)]="display" modal="modal" showEffect="fade">
+					<p>Here's a little story all about how, my life got flipped, turned upside down.</p>
+					<footer>
+						<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+							<button type="button" pButton icon="fa-close" (click)="display=false" label="No"></button>
+							<button type="button" pButton icon="fa-check" (click)="display=false" label="Yes"></button>
+						</div>
+					</footer>
+				</p-dialog>
+				<button type="text" (click)="showDialog()" pButton icon="fa-external-link-square" label="Show"></button>
+			</md-content>
+		</md-content>
+
+
+
