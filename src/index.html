@@ -3,37 +3,35 @@
 		<title>Angular 2 Material Showcase</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="./content/Site.css">
+		<link rel="stylesheet" href="content/Site.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-		<link rel="stylesheet" type="text/css" href="../node_modules/primeui/themes/omega/theme.css" />
-		<link rel="stylesheet" type="text/css" href="./content/font-awesome.min.css" />
-		<link rel="stylesheet" type="text/css" href="../node_modules/primeui/primeui-ng-all.min.css" />
 		<!-- 1. Load libraries -->
 		<!-- Polyfill(s) for older browsers -->
 		<!--<script src="../node_modules/core-js/client/shim.min.js"></script>-->
-		<script src="../node_modules/es6-shim/es6-shim.min.js"></script>
-		<script src="../node_modules/reflect-metadata/Reflect.js"></script>
-		<script src="../node_modules/zone.js/dist/zone.js"></script>
-		<script src="../node_modules/systemjs/dist/system.js"></script>
-		<script src="../node_modules/rxjs/Rx.js"></script>
+		<!--Angular2 is dependent on Zone, Reflect, and RxJS -->
+		<!--<script src="../src/scripts/es6-shim/es6-shim.js"></script>-->
+		<script src="../src/scripts/zone.js/dist/zone.js"></script>
+		<script src="../src/scripts/reflect-metadata/Reflect.js"></script>
+		<script src="../src/scripts/systemjs/dist/system.js"></script>
+		<!--<script src="../src/scripts/rxjs/Rx.js"></script>-->
 		<!-- 2. Configure SystemJS -->
+		<!--Use System.import to ensure the systemjs config file is loaded
+		    before bootstrap is called. -->
 		<script>
 			System.import('system.config.js').then(function () {
-				System.import('app');
+				System.import('rxjs').then(function() {
+					System.import('app');
+				})
 			}).catch(function(err) {
 				console.log('error while importing:');
 				console.log(err);
 				console.log(err.stack);
 			});
 		</script>
-
-
 	</head>
 	<!-- 3. Display the application -->
 	<body>
-		<!--<my-app>Loading...</my-app>-->
+		<my-app>Loading...</my-app>
 		<!--<keyspring-app>Loading....</keyspring-app>-->
-		<prime-app>Loading....</prime-app>
 	</body>
 </html>
