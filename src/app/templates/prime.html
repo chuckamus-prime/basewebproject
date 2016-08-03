@@ -3,7 +3,7 @@
 		<h2>Buttons</h2>
 		<button pButton type="button" label="Submit"></button>
 
-		<!--<p-growl [value]="msgs"></p-growl>
+<!--		<p-growl [value]="msgs"></p-growl>
 		<p-splitButton label="Save" icon="fa-check" (onClick)="save()">
 			<p-splitButtonItem icon="fa-close" label="Delete" (onClick)="delete()"></p-splitButtonItem>
 			<p-splitButtonItem icon="fa-refresh" label="Update" (onClick)="update()"></p-splitButtonItem>
@@ -22,17 +22,17 @@
 	<md-content>
 		<h2>Checkboxes</h2>
 		<h3 class="first">Basic</h3>
-					<div class="ui-g-12">
-				<p-checkbox name="group1" value="New York" label="New York" [(ngModel)]="selectedCities"></p-checkbox>
-			</div>
-			<div class="ui-g-12">
-				<p-checkbox name="group1" value="San Francisco" label="San Francisco"
-							[(ngModel)]="selectedCities"></p-checkbox>
-			</div>
-			<div class="ui-g-12">
-				<p-checkbox name="group1" value="Los Angeles" label="Los Angeles"
-							[(ngModel)]="selectedCities"></p-checkbox>
-			</div>
+		<div class="ui-g-12">
+			<p-checkbox name="group1" value="New York" label="New York" [(ngModel)]="selectedCities"></p-checkbox>
+		</div>
+		<div class="ui-g-12">
+			<p-checkbox name="group1" value="San Francisco" label="San Francisco"
+						[(ngModel)]="selectedCities"></p-checkbox>
+		</div>
+		<div class="ui-g-12">
+			<p-checkbox name="group1" value="Los Angeles" label="Los Angeles"
+						[(ngModel)]="selectedCities"></p-checkbox>
+		</div>
 
 
 		Selected Cities: <span *ngFor="let city of selectedCities" style="margin-right:10px">{{city}}</span>
@@ -60,7 +60,6 @@
 		<h3>Boolean - {{checked}}</h3>
 		<p-checkbox [(ngModel)]="checked" binary="true"></p-checkbox>
 	</md-content>
-
 
 	<md-content>
 		<h2>Radio Button</h2>
@@ -102,7 +101,6 @@
 	</md-content>
 
 
-
 	<md-content class="body-content">
 		<md-content>
 			<h2>Input</h2>
@@ -130,6 +128,6 @@
 				<button type="text" (click)="showDialog()" pButton icon="fa-external-link-square" label="Show"></button>
 			</md-content>
 		</md-content>
+	</md-content>
 
-
-
+</md-content>

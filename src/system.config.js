@@ -15,8 +15,8 @@
 		'app':                        { main: 'bootstrap',  defaultExtension: 'js' },
 		'rxjs':                       { main: 'Rx', defaultExtension: 'js' },
 		'reflect-metadata':           { defaultExtension: 'js' },
-		'primeng':           		  { defaultExtension: 'js' }
-		
+		'primeng':           		  { defaultExtension: 'js' },
+		'primeui':           		  { defaultExtension: 'js' }
 
 	};
 	var ngPackageNames = [
@@ -26,7 +26,8 @@
 		'forms',
 		'http',
 		'platform-browser',
-		'platform-browser-dynamic'
+		'platform-browser-dynamic',
+		'router'
 	];
 
 	var ngMaterialPackageNames = [
