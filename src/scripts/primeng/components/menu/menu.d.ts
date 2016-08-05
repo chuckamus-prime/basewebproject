@@ -11,6 +11,7 @@ export declare class Menu implements AfterViewInit, OnDestroy {
     popup: boolean;
     style: any;
     styleClass: string;
+    appendTo: any;
     container: any;
     documentClickListener: any;
     preventDocumentDefault: any;

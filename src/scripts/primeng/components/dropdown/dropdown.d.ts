@@ -17,11 +17,11 @@ export declare class Dropdown implements OnInit, AfterViewInit, AfterViewChecked
     required: boolean;
     itemTemplate: TemplateRef<any>;
     constructor(el: ElementRef, domHandler: DomHandler, renderer: Renderer, differs: IterableDiffers);
+    selectedOption: SelectItem;
     value: any;
     onModelChange: Function;
     onModelTouched: Function;
     optionsToDisplay: SelectItem[];
-    label: string;
     hover: boolean;
     focus: boolean;
     differ: any;
@@ -34,15 +34,18 @@ export declare class Dropdown implements OnInit, AfterViewInit, AfterViewChecked
     private initialized;
     private selfClick;
     private itemClick;
+    private hoveredItem;
+    private selectedOptionUpdated;
     ngOnInit(): void;
     ngDoCheck(): void;
     ngAfterViewInit(): void;
+    label: string;
+    onItemClick(option: any): void;
     ngAfterViewChecked(): void;
     writeValue(value: any): void;
+    updateSelectedOption(val: any): void;
     registerOnChange(fn: Function): void;
     registerOnTouched(fn: Function): void;
-    updateLabel(): void;
-    highlightValue(fallbackToFirst?: boolean): void;
     updateDimensions(): void;
     onMouseenter(event: any): void;
     onMouseleave(event: any): void;
@@ -53,11 +56,8 @@ export declare class Dropdown implements OnInit, AfterViewInit, AfterViewChecked
     onBlur(event: any): void;
     onKeydown(event: any): void;
     findListItem(element: any): any;
-    onListMouseover(event: any): void;
-    onListMouseout(event: any): void;
-    onListClick(event: any): void;
-    selectItem(event: any, item: any): void;
-    findItemIndex(val: any, opts: SelectItem[]): number;
+    findOptionIndex(val: any, opts: SelectItem[]): number;
+    findOption(val: any, opts: SelectItem[]): SelectItem;
     onFilter(event: any): void;
     ngOnDestroy(): void;
 }

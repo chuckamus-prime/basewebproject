@@ -1,5 +1,5 @@
-import { ElementRef, EventEmitter, IterableDiffers } from '@angular/core';
-export declare class Schedule {
+import { ElementRef, AfterViewInit, OnDestroy, DoCheck, EventEmitter, IterableDiffers } from '@angular/core';
+export declare class Schedule implements AfterViewInit, DoCheck, OnDestroy {
     private el;
     events: any[];
     header: any;

@@ -4,6 +4,8 @@ export declare class Checkbox implements ControlValueAccessor {
     value: any;
     name: string;
     disabled: boolean;
+    binary: string;
+    label: string;
     onChange: EventEmitter<any>;
     model: any;
     onModelChange: Function;

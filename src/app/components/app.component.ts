@@ -17,7 +17,6 @@ import {MdUniqueSelectionDispatcher} from '@angular2-material/core/coordination/
 import {MD_GRID_LIST_DIRECTIVES} from '@angular2-material/grid-list';
 
 
-
 @Component({
 	selector: 'my-app',
 	templateUrl: 'app/templates/styleShowcase.html',

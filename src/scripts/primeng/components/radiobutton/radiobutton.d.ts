@@ -4,6 +4,7 @@ export declare class RadioButton implements ControlValueAccessor {
     value: any;
     name: string;
     disabled: boolean;
+    label: string;
     click: EventEmitter<any>;
     model: any;
     onModelChange: Function;

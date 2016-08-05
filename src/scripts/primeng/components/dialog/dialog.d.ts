@@ -18,6 +18,7 @@ export declare class Dialog implements AfterViewInit, AfterViewChecked, OnDestro
     rtl: boolean;
     closable: boolean;
     responsive: boolean;
+    appendTo: any;
     headerFacet: any;
     onBeforeShow: EventEmitter<any>;
     onAfterShow: EventEmitter<any>;

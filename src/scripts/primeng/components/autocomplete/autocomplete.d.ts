@@ -37,6 +37,8 @@ export declare class AutoComplete implements AfterViewInit, DoCheck, AfterViewCh
     panelVisible: boolean;
     documentClickListener: any;
     suggestionsUpdated: boolean;
+    highlightOption: any;
+    highlightOptionChanged: boolean;
     constructor(el: ElementRef, domHandler: DomHandler, differs: IterableDiffers, renderer: Renderer);
     ngDoCheck(): void;
     ngAfterViewInit(): void;
@@ -46,11 +48,7 @@ export declare class AutoComplete implements AfterViewInit, DoCheck, AfterViewCh
     registerOnTouched(fn: Function): void;
     onInput(event: any): void;
     search(event: any, query: string): void;
-    onItemMouseover(event: any): void;
-    onItemMouseout(event: any): void;
-    onItemClick(event: any): void;
-    selectItem(item: any): void;
-    findListItem(element: any): any;
+    selectItem(option: any): void;
     show(): void;
     align(): void;
     hide(): void;
@@ -59,5 +57,6 @@ export declare class AutoComplete implements AfterViewInit, DoCheck, AfterViewCh
     resolveFieldData(data: any): any;
     onKeydown(event: any): void;
     isSelected(val: any): boolean;
+    findOptionIndex(option: any): number;
     ngOnDestroy(): void;
 }

@@ -5,7 +5,7 @@ import { PrimeComponent } from './components/primeng.component';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import { HTTP_PROVIDERS } from '@angular/http';
 
-bootstrap(PrimeComponent, [
+bootstrap(AppComponent, [
 	disableDeprecatedForms(),
 	provideForms(),
 	HTTP_PROVIDERS

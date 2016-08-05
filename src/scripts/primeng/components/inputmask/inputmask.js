@@ -37,6 +37,12 @@ var InputMask = (function () {
                 var val = _this.unmask ? jQuery(_this.el.nativeElement.children[0])['inputmask']('unmaskedvalue') : event.target.value;
                 _this.onModelChange(val);
             },
+            onBeforeWrite: function (event, buffer, caretPos, opts) {
+                if (event.target != null) {
+                    var val = _this.unmask ? jQuery(_this.el.nativeElement.children[0])['inputmask']('unmaskedvalue') : event.target.value;
+                    _this.onModelChange(val);
+                }
+            },
             oncomplete: function (event) {
                 _this.onComplete.emit(event);
             },

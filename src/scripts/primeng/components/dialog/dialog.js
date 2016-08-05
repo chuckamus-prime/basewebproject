@@ -87,6 +87,12 @@ var Dialog = (function () {
                 }
             });
         }
+        if (this.appendTo) {
+            if (this.appendTo === 'body')
+                document.body.appendChild(this.el.nativeElement);
+            else
+                this.appendTo.appendChild(this.el.nativeElement);
+        }
     };
     Dialog.prototype.ngAfterViewChecked = function () {
         if (this.shown) {
@@ -199,6 +205,9 @@ var Dialog = (function () {
         if (this.closeOnEscape && this.closable) {
             this.documentEscapeListener();
         }
+        if (this.appendTo && this.appendTo === 'body') {
+            document.body.removeChild(this.el.nativeElement);
+        }
     };
     __decorate([
         core_1.Input(), 
@@ -256,6 +265,10 @@ var Dialog = (function () {
         core_1.Input(), 
         __metadata('design:type', Boolean)
     ], Dialog.prototype, "responsive", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], Dialog.prototype, "appendTo", void 0);
     __decorate([
         core_1.ContentChild(common_1.Header), 
         __metadata('design:type', Object)

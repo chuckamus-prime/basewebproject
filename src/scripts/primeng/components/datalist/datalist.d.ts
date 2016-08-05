@@ -11,6 +11,7 @@ export declare class DataList implements AfterViewInit, DoCheck {
     onLazyLoad: EventEmitter<any>;
     style: any;
     styleClass: string;
+    paginatorPosition: string;
     header: any;
     footer: any;
     itemTemplate: TemplateRef<any>;

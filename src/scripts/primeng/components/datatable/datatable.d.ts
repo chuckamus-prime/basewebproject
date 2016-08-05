@@ -1,9 +1,21 @@
-import { ElementRef, AfterViewInit, AfterViewChecked, OnInit, DoCheck, EventEmitter, Renderer, IterableDiffers, QueryList, TemplateRef, ChangeDetectorRef } from '@angular/core';
+import { ElementRef, AfterViewInit, AfterViewChecked, OnInit, OnDestroy, DoCheck, EventEmitter, Renderer, IterableDiffers, QueryList, TemplateRef, ChangeDetectorRef } from '@angular/core';
 import { Column } from '../column/column';
 import { LazyLoadEvent } from '../common';
 import { SortMeta } from '../common';
 import { DomHandler } from '../dom/domhandler';
-export declare class DataTable implements AfterViewChecked, AfterViewInit, OnInit, DoCheck {
+import { Subscription } from 'rxjs/Subscription';
+export declare class DTRadioButton {
+    checked: boolean;
+    onClick: EventEmitter<any>;
+    handleClick(event: any): void;
+}
+export declare class DTCheckbox {
+    checked: boolean;
+    disabled: boolean;
+    onChange: EventEmitter<any>;
+    handleClick(event: any): void;
+}
+export declare class DataTable implements AfterViewChecked, AfterViewInit, OnInit, DoCheck, OnDestroy {
     private el;
     private domHandler;
     private renderer;
@@ -23,6 +35,7 @@ export declare class DataTable implements AfterViewChecked, AfterViewInit, OnIni
     onRowSelect: EventEmitter<any>;
     onRowUnselect: EventEmitter<any>;
     onRowDblclick: EventEmitter<any>;
+    onHeaderCheckboxToggle: EventEmitter<any>;
     onContextMenuSelect: EventEmitter<any>;
     filterDelay: number;
     lazy: boolean;
@@ -46,6 +59,9 @@ export declare class DataTable implements AfterViewChecked, AfterViewInit, OnIni
     multiSortMeta: SortMeta[];
     contextMenu: any;
     csvSeparator: string;
+    emptyMessage: string;
+    paginatorPosition: string;
+    expandedRows: any[];
     onEditInit: EventEmitter<any>;
     onEditComplete: EventEmitter<any>;
     onEdit: EventEmitter<any>;
@@ -69,7 +85,6 @@ export declare class DataTable implements AfterViewChecked, AfterViewInit, OnIni
     private columnsUpdated;
     private stopSortPropagation;
     private sortColumn;
-    private expandedRows;
     private percentageScrollHeight;
     private scrollBody;
     private scrollHeader;
@@ -90,6 +105,7 @@ export declare class DataTable implements AfterViewChecked, AfterViewInit, OnIni
     differ: any;
     globalFilterFunction: any;
     preventBlurOnEdit: boolean;
+    columnsSubscription: Subscription;
     constructor(el: ElementRef, domHandler: DomHandler, differs: IterableDiffers, cols: QueryList<Column>, renderer: Renderer, changeDetector: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewChecked(): void;
@@ -107,12 +123,16 @@ export declare class DataTable implements AfterViewChecked, AfterViewInit, OnIni
     isSorted(column: Column): boolean;
     getSortOrder(column: Column): number;
     handleRowClick(event: any, rowData: any): void;
+    selectRowWithRadio(rowData: any): void;
+    toggleRowWithCheckbox(event: any, rowData: any): void;
+    toggleRowsWithCheckbox(event: any): void;
     onRowRightClick(event: any, rowData: any): void;
     rowDblclick(event: any, rowData: any): void;
     isSingleSelectionMode(): boolean;
     isMultipleSelectionMode(): boolean;
     findIndexInSelection(rowData: any): number;
     isSelected(rowData: any): boolean;
+    allSelected: boolean;
     onFilterKeyup(value: any, field: any, matchMode: any): void;
     filter(): void;
     hasFilter(): boolean;
